@@ -1,13 +1,103 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #eee;
+}
+.main{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-form{
+  display: flex;
+  justify-content: center;
+}
+
+.container-imgs{
+  display: none;
+  justify-content: right;
+}
+
+.img-login img{
+  width: 450px;
+  height: 600px;
+}
+
+.main-content {
+  margin: 10px auto;
+  background-color: #fff;
+  padding: 40px 50px;
+}
+
+.header {
+  border: 0px solid #000;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.header img {
+  height: 50px;
+  width: 175px;
+}
+
+.input-1,
+.input-2 {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+.overlap-text {
+  position: relative;
+}
+
+.overlap-text a {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #003569;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: 'Overpass Mono', monospace;
+  letter-spacing: -1px;
+}
+
+.btn {
+  width: 100%;
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  padding: 5px 12px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+input:focus {
+    background-color: yellow;
+}
+
+@media only screen and (min-width:1024px){
+  .container-imgs{
+    display: flex;
+  }
+  .main-content{
+    width: 75%;
+    border: 2px solid #e6e6e6;
+  }
+
+  /*REGISTER*/
+  .container-register{
+    width: 25%;
+  }
+  .form-register{
+    border: 2px solid #e6e6e6;
+  }
 }
