@@ -1,8 +1,22 @@
 import { Button, Container } from "react-bootstrap";
 import GoogleButton from "react-google-button";
 import instagram from "../assets/instagram.png";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER } from "../graphql/mutations";
+import { useForm } from "../hooks/useForm";
 
 const Register = () => {
+  const [user, handleChange, enable] = useForm({
+    email: "",
+    password: "",
+    username: "",
+  });
+  const [createUser] = useMutation(CREATE_USER);
+
+  const handleSubmit = () => {
+    const { email, password, username } = user;
+    createUser({ variables: { email, password, username } });
+  };
   return (
     <Container className="d-flex justify-content-center mt-5">
       <div className="container-register">
@@ -26,19 +40,45 @@ const Register = () => {
             OR
           </h5>
           <div className="l-part mt-3">
-            <input type="email" placeholder="Email" className="input-1" />
-            <input type="text" placeholder="Full Name" className="input-1" />
-            <input type="text" placeholder="Username" className="input-1" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="input-1"
+              value={user.email}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              className="input-1"
+              value={user.username}
+              onChange={handleChange}
+            />
             <div className="overlap-text">
               <input
                 type="password"
+                name="password"
                 placeholder="Password"
                 className="input-2"
+                value={user.password}
+                onChange={handleChange}
               />
             </div>
-            <Button disabled variant="primary" className="mt-3 mb-4">
-              Sign up
-            </Button>
+            {enable ? (
+              <Button
+                variant="primary"
+                className="mt-3 mb-4"
+                onClick={handleSubmit}
+              >
+                Sign up
+              </Button>
+            ) : (
+              <Button disabled variant="primary" className="mt-3 mb-4">
+                Sign up
+              </Button>
+            )}
           </div>
         </div>
         <div className="row mt-4 form-register">
