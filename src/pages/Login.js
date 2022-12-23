@@ -2,29 +2,11 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import instagram from "../assets/instagram.png";
 import instagramLogin from "../assets/screenshot1.png";
 import GoogleButton from "react-google-button";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../graphql/mutations";
-import { useForm } from "../hooks/useForm";
-import { useDispatch, useSelector } from "react-redux";
+import useLogin from "../hooks/useLogin";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [user, handleChange, enable] = useForm({
-    email: "",
-    password: "",
-  });
-  const [loginUser, { data }] = useMutation(LOGIN_USER);
-  const dispatch = useDispatch();
-  const userR = useSelector((state) => state);
-
-  const handleSubmit = () => {
-    const { email, password } = user;
-    loginUser({ variables: { email, password } });
-    dispatch({
-      type: "LOGIN",
-      payload: data.loginUser,
-    });
-  };
-  console.log(data, userR);
+  const [user, handleChange, enable, handleSubmit] = useLogin();
   return (
     <Container>
       <Row className="main">
@@ -84,7 +66,7 @@ const Login = () => {
             </div>
             <div className="row main-content">
               <div className="d-flex justify-content-center">
-                Don't have an account?<a href="/">Sign up</a>
+                Don't have an account?<Link to="/">Sign up</Link>
               </div>
             </div>
           </div>

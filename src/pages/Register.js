@@ -1,22 +1,12 @@
 import { Button, Container } from "react-bootstrap";
 import GoogleButton from "react-google-button";
+import { Link } from "react-router-dom";
 import instagram from "../assets/instagram.png";
-import { useMutation } from "@apollo/client";
-import { CREATE_USER } from "../graphql/mutations";
-import { useForm } from "../hooks/useForm";
+import useRegister from "../hooks/useRegister";
 
 const Register = () => {
-  const [user, handleChange, enable] = useForm({
-    email: "",
-    password: "",
-    username: "",
-  });
-  const [createUser] = useMutation(CREATE_USER);
+  const [user, handleChange, enable, handleSubmit] = useRegister();
 
-  const handleSubmit = () => {
-    const { email, password, username } = user;
-    createUser({ variables: { email, password, username } });
-  };
   return (
     <Container className="d-flex justify-content-center mt-5">
       <div className="container-register">
@@ -83,7 +73,7 @@ const Register = () => {
         </div>
         <div className="row mt-4 form-register">
           <div className="d-flex justify-content-center mt-4 mb-4">
-            Do you have an account?<a href="/">Sign in</a>
+            Do you have an account?<Link to="/login">Sign in</Link>
           </div>
         </div>
       </div>
