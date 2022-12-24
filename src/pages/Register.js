@@ -5,7 +5,7 @@ import instagram from "../assets/instagram.png";
 import useRegister from "../hooks/useRegister";
 
 const Register = () => {
-  const [user, handleChange, enable, handleSubmit] = useRegister();
+  const [user, handleChange, enable, handleSubmit, error] = useRegister();
 
   return (
     <Container className="d-flex justify-content-center mt-5">
@@ -70,6 +70,11 @@ const Register = () => {
               </Button>
             )}
           </div>
+          {error ? (
+            <div className="d-flex justify-content-center mt-4 error-message">
+              <h5>{error}</h5>
+            </div>
+          ) : null}
         </div>
         <div className="row mt-4 form-register">
           <div className="d-flex justify-content-center mt-4 mb-4">

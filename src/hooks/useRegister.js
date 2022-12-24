@@ -1,4 +1,5 @@
 import { useMutation } from "@apollo/client";
+import { useState } from "react";
 import { CREATE_USER } from "../graphql/mutations";
 import { useForm } from "./useForm";
 
@@ -8,14 +9,21 @@ const useRegister = () => {
     password: "",
     username: "",
   });
+  const [error, setError] = useState("");
   const [createUser] = useMutation(CREATE_USER);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const { email, password, username } = user;
-    createUser({ variables: { email, password, username } });
+    try {
+      await createUser({
+        variables: { email, password, username },
+      });
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
-  return [user, handleChange, enable, handleSubmit];
+  return [user, handleChange, enable, handleSubmit, error];
 };
 
 export default useRegister;

@@ -84,6 +84,10 @@ input:focus {
     background-color: yellow;
 }
 
+.error-message h5{
+  color: rgb(252, 74, 74);
+}
+
 @media only screen and (min-width:1024px){
   .container-imgs{
     display: flex;

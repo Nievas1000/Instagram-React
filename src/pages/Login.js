@@ -6,7 +6,7 @@ import useLogin from "../hooks/useLogin";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [user, handleChange, enable, handleSubmit] = useLogin();
+  const [user, handleChange, enable, handleSubmit, error] = useLogin();
   return (
     <Container>
       <Row className="main">
@@ -62,6 +62,11 @@ const Login = () => {
                 <div className="d-flex justify-content-center mt-4">
                   <GoogleButton />
                 </div>
+                {error ? (
+                  <div className="d-flex justify-content-center mt-4 error-message">
+                    <h5>{error}</h5>
+                  </div>
+                ) : null}
               </div>
             </div>
             <div className="row main-content">

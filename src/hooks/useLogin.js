@@ -1,6 +1,7 @@
 import { useMutation } from "@apollo/client";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LOGIN_USER } from "../graphql/mutations";
 import { useForm } from "./useForm";
 
@@ -9,8 +10,10 @@ const useLogin = () => {
     email: "",
     password: "",
   });
+  const [error, setError] = useState("");
   const [loginUser] = useMutation(LOGIN_USER);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     const { email, password } = user;
@@ -21,13 +24,15 @@ const useLogin = () => {
           type: "LOGIN",
           payload: data.loginUser,
         });
-        <Navigate to="/profile" />;
+        navigate("/profile", {
+          replace: true,
+        });
       }
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
     }
   };
-  return [user, handleChange, enable, handleSubmit];
+  return [user, handleChange, enable, handleSubmit, error];
 };
 
 export default useLogin;
