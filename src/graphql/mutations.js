@@ -11,6 +11,11 @@ export const LOGIN_USER = gql`
     loginUser(email: $email, password: $password) {
       email
       username
+      image
+      publications
+      followed
+      followers
+      description
     }
   }
 `;

@@ -8,7 +8,7 @@ import Register from "./pages/Register";
 function App() {
   return (
     <div className="App">
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route
@@ -19,8 +19,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-      </Routes> */}
-      <Profile />
+      </Routes>
     </div>
   );
 }

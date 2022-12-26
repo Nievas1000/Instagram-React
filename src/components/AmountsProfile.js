@@ -1,19 +1,21 @@
 import { Container } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const AmountsProfile = () => {
+  const user = useSelector((state) => state.user);
   return (
     <Container className="container-amount-profile">
       <ul className="d-flex amount-profile">
         <li>
-          <span>7</span>
+          <span>{user.publications}</span>
           <p>publicaciones</p>
         </li>
         <li>
-          <span>490</span>
+          <span>{user.followers}</span>
           <p>seguidores</p>
         </li>
         <li>
-          <span>446</span>
+          <span>{user.followed}</span>
           <p>seguidos</p>
         </li>
       </ul>

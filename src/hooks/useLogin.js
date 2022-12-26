@@ -24,6 +24,7 @@ const useLogin = () => {
           type: "LOGIN",
           payload: data.loginUser,
         });
+        localStorage.setItem("user", data.loginUser.email);
         navigate("/profile", {
           replace: true,
         });

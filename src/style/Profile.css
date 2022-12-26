@@ -16,13 +16,16 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .container-amount-profile{
+    display: flex;
+    justify-content: center;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
-.amount-profile-mob{
+
+.mob{
     display: block;
 }
-.amount-profile-desk{
+.desk{
     display: none;
 }
 .amount-profile{
@@ -58,34 +61,43 @@
     height: 150px;
     object-fit: cover;
 }
-
+.container-imgs{
+    display: block;
+}
 .icons-container{
     display: none;
 }
 
-@media only screen and (min-width:1024px){
-    .img-profile{
-        border-radius: 150px;
-        width: 220px;
-        height: 220px;
-        margin-left: 15%;
-    }
-    .amount-profile-desk{
-        display: block;
-    }
-    .amount-profile-mob{
+@media only screen and (min-width:570px){
+    .mob{
         display: none;
     }
+    .desk{
+        display: block;
+    }
+    .img-profile{
+        border-radius: 150px;
+        width: 200px;
+        height: 200px;
+        margin-left: 15%;
+    }
     .container-amount-profile{
-       border: none;
+        justify-content: left;
+        border: none;
     }
     .amount-profile{
         padding-left: 0px;
-        margin-left: -20px;
+        margin-left: -1.5%;
         margin-top: 10px;
     }
     .amount-profile li{
         font-size: 20px;
+        display: flex;
+    }
+    div.description{
+        margin-left: -1.5%;
+    }
+    .container-imgs{
         display: flex;
     }
     .imgs-profile img{
@@ -94,6 +106,9 @@
     }
     .icons-container{
         display: flex;
+    }
+    .icons-container div{
+        border-top: 1px solid rgb(119, 119, 119);
     }
     .icons-container span{
         text-transform: uppercase;
