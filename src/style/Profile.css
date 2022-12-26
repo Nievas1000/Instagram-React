@@ -1,0 +1,106 @@
+.img-profile{
+    border-radius: 150px;
+    width: 100px;
+    height: 100px;
+}
+.container-data-profile{
+    margin-left: -30%;
+}
+.button-edit{
+    width: 220px;
+}
+.description span{
+    font-weight: bold;
+}
+.description p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container-amount-profile{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.amount-profile-mob{
+    display: block;
+}
+.amount-profile-desk{
+    display: none;
+}
+.amount-profile{
+    list-style: none;
+    margin-bottom: 0rem;
+}
+.amount-profile *{
+    margin: 6px;
+}
+.amount-profile li span{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+.amount-profile li p{
+    color: gray;
+}
+
+.imgs-profile{
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.imgs-profile > *{
+    padding-right: 0px !important;
+    padding-left: 2px !important;
+    padding-bottom: 10px;
+}
+
+.imgs-profile img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.icons-container{
+    display: none;
+}
+
+@media only screen and (min-width:1024px){
+    .img-profile{
+        border-radius: 150px;
+        width: 220px;
+        height: 220px;
+        margin-left: 15%;
+    }
+    .amount-profile-desk{
+        display: block;
+    }
+    .amount-profile-mob{
+        display: none;
+    }
+    .container-amount-profile{
+       border: none;
+    }
+    .amount-profile{
+        padding-left: 0px;
+        margin-left: -20px;
+        margin-top: 10px;
+    }
+    .amount-profile li{
+        font-size: 20px;
+        display: flex;
+    }
+    .imgs-profile img{
+        width: 95%;
+        height: 288px;
+    }
+    .icons-container{
+        display: flex;
+    }
+    .icons-container span{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+    }
+    .icon-saved{
+        margin-left: 10%;
+    }
+}

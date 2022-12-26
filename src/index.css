@@ -86,6 +86,7 @@ input:focus {
 
 .error-message h5{
   color: rgb(252, 74, 74);
+  text-align: center;
 }
 
 @media only screen and (min-width:1024px){
