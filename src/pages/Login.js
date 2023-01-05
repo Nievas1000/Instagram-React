@@ -71,7 +71,7 @@ const Login = () => {
             </div>
             <div className="row main-content">
               <div className="d-flex justify-content-center">
-                Don't have an account?<Link to="/">Sign up</Link>
+                Don't have an account?<Link to="/register">Sign up</Link>
               </div>
             </div>
           </div>

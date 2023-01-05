@@ -6,7 +6,6 @@ import useRegister from "../hooks/useRegister";
 
 const Register = () => {
   const [user, handleChange, enable, handleSubmit, error] = useRegister();
-
   return (
     <Container className="d-flex justify-content-center mt-5">
       <div className="container-register">
@@ -78,7 +77,7 @@ const Register = () => {
         </div>
         <div className="row mt-4 form-register">
           <div className="d-flex justify-content-center mt-4 mb-4">
-            Do you have an account?<Link to="/login">Sign in</Link>
+            Do you have an account?<Link to="/">Sign in</Link>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedSesionsRoute = ({ children }) => {
   const state = useSelector((state) => state);
-  if (!state.isLogged) {
-    return <Navigate to="/" />;
+  if (state.isLogged) {
+    return <Navigate to="/profile" />;
   }
   return children;
 };
 
-export default ProtectedRoute;
+export default ProtectedSesionsRoute;

@@ -21,9 +21,6 @@ const client = new ApolloClient({
   }),
 });
 
-const user = localStorage.getItem("user");
-console.log(user);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>

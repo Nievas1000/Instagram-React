@@ -19,3 +19,17 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const GET_USER_BY_EMAIL = gql`
+  mutation getUser($email: String!) {
+    getUserByEmail(email: $email) {
+      username
+      email
+      image
+      publications
+      followed
+      followers
+      description
+    }
+  }
+`;
