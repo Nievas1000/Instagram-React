@@ -1,0 +1,19 @@
+.container-menu{
+    background-color: rgb(230, 237, 240);
+    height: 100vh;
+    padding-top: 20%;
+}
+.container-list-menu{
+    margin-top: 20%;
+    list-style: none;
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container-list-menu li{
+    margin-top: 15%;
+    display: flex;
+}
+.container-list-menu li div{
+    margin-top: -2%;
+    margin-left: 3%;
+}

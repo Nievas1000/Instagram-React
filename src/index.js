@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import "./style/Profile.css";
+import "./style/Menu.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ApolloClient,

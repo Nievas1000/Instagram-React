@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 
-function App() {
+const App = () => {
   useAutoLogin();
   return (
     <div className="App">
@@ -39,6 +39,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
