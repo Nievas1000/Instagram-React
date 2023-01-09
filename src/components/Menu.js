@@ -1,56 +1,57 @@
-import { Container } from "react-bootstrap";
 import instagram from "../assets/instagram.png";
 import {
   AiFillHome,
   AiOutlineHeart,
   AiOutlineUserDelete,
+  AiOutlineInstagram,
 } from "react-icons/ai";
 import { BiSearch, BiMoviePlay, BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineExplore } from "react-icons/md";
 import { BsPlusSquare } from "react-icons/bs";
-import { useSelector } from "react-redux";
 const Menu = () => {
-  const user = useSelector((state) => state.user);
   return (
-    <Container className="container-menu">
+    <div className="container-menu">
       <div className="justify-content-center header">
         <img src={instagram} alt="instagram" />
+        <div className="icon-instagram">
+          <AiOutlineInstagram />
+        </div>
       </div>
       <ul className="container-list-menu">
-        <li>
+        <li className="container-item-menu">
           <AiFillHome />
-          <div>Home</div>
+          <div className="item-menu">Home</div>
         </li>
-        <li>
+        <li className="container-item-menu icon-mobile">
           <BiSearch />
-          <div>Search</div>
+          <div className="item-menu">Search</div>
         </li>
-        <li>
+        <li className="container-item-menu">
           <MdOutlineExplore />
-          <div>Explore</div>
+          <div className="item-menu">Explore</div>
         </li>
-        <li>
+        <li className="container-item-menu">
           <BiMoviePlay />
-          <div>Reels</div>
+          <div className="item-menu">Reels</div>
         </li>
-        <li>
+        <li className="container-item-menu">
           <BiMessageRoundedDots />
-          <div>Messages</div>
+          <div className="item-menu">Messages</div>
         </li>
-        <li>
+        <li className="container-item-menu icon-mobile">
           <AiOutlineHeart />
-          <div>Notifications</div>
+          <div className="item-menu">Notifications</div>
         </li>
-        <li>
+        <li className="container-item-menu">
           <BsPlusSquare />
-          <div>Create</div>
+          <div className="item-menu">Create</div>
         </li>
-        <li>
+        <li className="container-item-menu">
           <AiOutlineUserDelete />
-          <div>Profile</div>
+          <div className="item-menu">Profile</div>
         </li>
       </ul>
-    </Container>
+    </div>
   );
 };
 

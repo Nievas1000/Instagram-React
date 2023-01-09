@@ -25,6 +25,9 @@ const Profile = () => {
           </div>
           <IconsProfile />
           <ProfileImagesZone />
+          <div className="menu-mobile">
+            <Menu />
+          </div>
         </Col>
       </Row>
     </div>

@@ -1,7 +1,8 @@
 .container-menu{
     background-color: rgb(230, 237, 240);
     height: 100vh;
-    padding-top: 20%;
+    padding-top: 15%;
+    width: 100%;
 }
 .container-list-menu{
     margin-top: 20%;
@@ -16,4 +17,59 @@
 .container-list-menu li div{
     margin-top: -2%;
     margin-left: 3%;
+}
+.container-item-menu svg{
+    font-size: 30px;
+}
+.icon-instagram{
+    display: none;
+}
+.icon-instagram svg{
+    margin-top: -50%;
+}
+@media only screen and (max-width:1300px){
+    .container-menu{
+        width: 100px;
+    }
+    .container-list-menu li{
+        margin-top: 40%;
+    }
+    .item-menu{
+        display: none;
+    }
+    .container-item-menu{
+        font-size: 35px;
+    }
+    .header img{
+        display: none;
+    }
+    .icon-instagram{
+        display: block;
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width:570px){
+    .container-menu{
+        width: 100%;
+        height: 10%;
+        position: absolute;
+        padding-top: 0px;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-instagram{
+        display: none;
+    }
+    .container-list-menu{
+        display: flex;
+        margin-top: -25%;
+    }
+    .container-item-menu{
+        margin: 15px;
+    }
+    .container-item-menu.icon-mobile{
+        display: none;
+    }
 }
