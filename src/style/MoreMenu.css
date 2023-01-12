@@ -1,0 +1,11 @@
+.container-moreMenu{
+    position: absolute;
+    background-color: rgb(217, 225, 228);
+    margin-top: -6%;
+    border-radius: 10px;
+    width: 250px;
+}
+.container-moreMenu ul *{
+    width: 100%;
+    width: 100%;
+}

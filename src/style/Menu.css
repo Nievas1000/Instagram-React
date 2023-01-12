@@ -11,8 +11,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .container-list-menu li{
-    margin-top: 15%;
+    cursor: pointer;
+    margin-top: 14%;
     display: flex;
+    align-items: center;
 }
 .container-list-menu li div{
     margin-top: -2%;
@@ -26,6 +28,11 @@
 }
 .icon-instagram svg{
     margin-top: -50%;
+}
+.more{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3%;
 }
 @media only screen and (max-width:1300px){
     .container-menu{
@@ -46,6 +53,9 @@
     .icon-instagram{
         display: block;
         font-size: 40px;
+    }
+    .more{
+        display: none;
     }
 }
 @media only screen and (max-width:570px){
@@ -71,5 +81,8 @@
     }
     .container-item-menu.icon-mobile{
         display: none;
+    }
+    .more{
+        display: none !important;
     }
 }

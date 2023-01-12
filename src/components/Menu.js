@@ -8,7 +8,11 @@ import {
 import { BiSearch, BiMoviePlay, BiMessageRoundedDots } from "react-icons/bi";
 import { MdOutlineExplore } from "react-icons/md";
 import { BsPlusSquare } from "react-icons/bs";
+import { GiHamburgerMenu } from "react-icons/gi";
+import MoreMenu from "./MoreMenu";
+import { useState } from "react";
 const Menu = () => {
+  const [showMenu, setShowMenu] = useState(false);
   return (
     <div className="container-menu">
       <div className="justify-content-center header">
@@ -49,6 +53,16 @@ const Menu = () => {
         <li className="container-item-menu">
           <AiOutlineUserDelete />
           <div className="item-menu">Profile</div>
+        </li>
+        <div className="more-menu">
+          <MoreMenu show={showMenu} />
+        </div>
+        <li
+          className="container-item-menu more"
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <GiHamburgerMenu />
+          <div className="item-menu">More</div>
         </li>
       </ul>
     </div>
