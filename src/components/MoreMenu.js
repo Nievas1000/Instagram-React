@@ -8,15 +8,20 @@ const MoreMenu = ({ show }) => {
       <div className="container-moreMenu">
         <ul>
           <li>
-            Settings <AiOutlineSetting />
+            <div>Settings</div>
+            <AiOutlineSetting />
           </li>
           <li>
-            Saved <CiSaveDown2 />
+            <div>Saved</div>
+            <CiSaveDown2 />
           </li>
           <li>
-            Change appearance <BsMoon />
+            <div>Change appearance</div>
+            <BsMoon />
           </li>
-          <li>Close session</li>
+          <li>
+            <div className="closse-session">Close session</div>
+          </li>
         </ul>
       </div>
     );

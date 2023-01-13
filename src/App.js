@@ -3,6 +3,7 @@ import "./App.css";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProtectedSesionsRoute from "./components/ProtectedSesionsRoute";
 import useAutoLogin from "./hooks/useAutoLogin";
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
@@ -33,6 +34,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <Home />
             </ProtectedRoute>
           }
         />

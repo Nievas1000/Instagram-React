@@ -13,46 +13,53 @@ import MoreMenu from "./MoreMenu";
 import { useState } from "react";
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showNames, setShowNames] = useState(true);
   return (
     <div className="container-menu">
       <div className="justify-content-center header">
         <img src={instagram} alt="instagram" />
         <div className="icon-instagram">
-          <AiOutlineInstagram />
+          {showNames ? <AiOutlineInstagram /> : null}
         </div>
       </div>
       <ul className="container-list-menu">
         <li className="container-item-menu">
           <AiFillHome />
-          <div className="item-menu">Home</div>
+          {showNames ? <div className="item-menu">Home</div> : null}
         </li>
-        <li className="container-item-menu icon-mobile">
+        <li
+          className="container-item-menu icon-mobile"
+          onClick={() => setShowNames(!showNames)}
+        >
           <BiSearch />
-          <div className="item-menu">Search</div>
+          {showNames ? <div className="item-menu">Search</div> : null}
         </li>
         <li className="container-item-menu">
           <MdOutlineExplore />
-          <div className="item-menu">Explore</div>
+          {showNames ? <div className="item-menu">Explore</div> : null}
         </li>
         <li className="container-item-menu">
           <BiMoviePlay />
-          <div className="item-menu">Reels</div>
+          {showNames ? <div className="item-menu">Reels</div> : null}
         </li>
         <li className="container-item-menu">
           <BiMessageRoundedDots />
-          <div className="item-menu">Messages</div>
+          {showNames ? <div className="item-menu">Messages</div> : null}
         </li>
-        <li className="container-item-menu icon-mobile">
+        <li
+          className="container-item-menu icon-mobile"
+          onClick={() => setShowNames(!showNames)}
+        >
           <AiOutlineHeart />
-          <div className="item-menu">Notifications</div>
+          {showNames ? <div className="item-menu">Notifications</div> : null}
         </li>
         <li className="container-item-menu">
           <BsPlusSquare />
-          <div className="item-menu">Create</div>
+          {showNames ? <div className="item-menu">Create</div> : null}
         </li>
         <li className="container-item-menu">
           <AiOutlineUserDelete />
-          <div className="item-menu">Profile</div>
+          {showNames ? <div className="item-menu">Profile</div> : null}
         </li>
         <div className="more-menu">
           <MoreMenu show={showMenu} />
@@ -62,7 +69,7 @@ const Menu = () => {
           onClick={() => setShowMenu(!showMenu)}
         >
           <GiHamburgerMenu />
-          <div className="item-menu">More</div>
+          {showNames ? <div className="item-menu">More</div> : null}
         </li>
       </ul>
     </div>
