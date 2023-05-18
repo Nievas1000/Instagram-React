@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <Container>
       <Row className="main">
-        <Col className="container-imgs">
+        <Col className="container-imgs-login">
           <div className="row d-flex img-login">
             <img src={instagramLogin} alt="instagram" />
           </div>

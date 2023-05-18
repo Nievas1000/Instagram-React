@@ -1,0 +1,54 @@
+.container-post{
+    width: 95%;
+    height: 550px;
+    position: absolute;
+    border: solid 1px black;
+}
+
+.header-post{
+    height: 12%;
+    width: 100%;
+    border: solid 1px black;
+}
+
+.header-post svg{
+    font-size: 25px;
+}
+
+.img-header-post img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.container-img-post{
+    height: 68%;
+    width: 100%;
+    border: solid 1px black;
+}
+
+.container-img-post img{
+    width: 100%;
+    max-height: 100%;
+}
+
+.accions-post svg{
+    font-size: 25px;
+    margin: 10px;
+}
+
+.save-post{
+    position: absolute;
+    right: 0;
+}
+
+.info-post{
+    margin: 10px;
+}
+
+@media only screen and (min-width:600px){
+    .container-post{
+        width: 40%;
+        height: 600px;
+    }
+}

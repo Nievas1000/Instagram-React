@@ -20,6 +20,7 @@
     justify-content: center;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
+    max-width: 1000px !important;
 }
 
 .mob{
@@ -70,7 +71,10 @@
 .menu{
     display: none;
 }
-@media only screen and (min-width:570px){
+.number-profile{
+    width: 100% !important;
+}
+@media only screen and (min-width:1000px){
     .menu{
         display: flex;
     }
@@ -85,6 +89,9 @@
         width: 200px;
         height: 200px;
         margin-left: 15%;
+    }
+    .number-profile{
+        width: 83.3% !important;
     }
     .container-amount-profile{
         justify-content: left;

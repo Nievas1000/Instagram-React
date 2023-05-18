@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import Layout from "./components/Layout";
 
 const App = () => {
   useAutoLogin();
@@ -33,7 +34,9 @@ const App = () => {
           path="/profile"
           element={
             <ProtectedRoute>
-              <Profile />
+              <Layout>
+                <Profile />
+              </Layout>
             </ProtectedRoute>
           }
         />
@@ -41,7 +44,9 @@ const App = () => {
           path="/home"
           element={
             <ProtectedRoute>
-              <Home />
+              <Layout>
+                <Home />
+              </Layout>
             </ProtectedRoute>
           }
         />

@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -6,19 +6,16 @@ import { LOGIN_USER } from "../graphql/mutations";
 import { useForm } from "./useForm";
 
 const useLogin = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [user, handleChange, enable] = useForm({
     email: "",
     password: "",
   });
   const [error, setError] = useState("");
-  const [loginUser] = useMutation(LOGIN_USER);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleSubmit = async () => {
-    const { email, password } = user;
-    try {
-      const { data } = await loginUser({ variables: { email, password } });
+  const [loginUser] = useLazyQuery(LOGIN_USER, {
+    fetchPolicy: "network-only",
+    onCompleted(data) {
       if (data.loginUser.email === user.email) {
         dispatch({
           type: "LOGIN",
@@ -29,6 +26,13 @@ const useLogin = () => {
           replace: true,
         });
       }
+    },
+  });
+
+  const handleSubmit = async () => {
+    const { email, password } = user;
+    try {
+      loginUser({ variables: { email, password } });
     } catch (error) {
       setError(error.message);
     }

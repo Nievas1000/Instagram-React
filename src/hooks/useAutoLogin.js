@@ -1,26 +1,33 @@
-import { useMutation } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { useDispatch, useSelector } from "react-redux";
 import { GET_USER_BY_EMAIL } from "../graphql/mutations";
+import { useEffect } from "react";
 
 const useAutoLogin = () => {
-  const [getUserByEmail] = useMutation(GET_USER_BY_EMAIL);
   const state = useSelector((state) => state);
   const email = localStorage.getItem("user");
   const dispatch = useDispatch();
-  const handle = async () => {
-    try {
-      const { data } = await getUserByEmail({ variables: { email } });
+  const [getUserByEmail] = useLazyQuery(GET_USER_BY_EMAIL, {
+    fetchPolicy: "network-only",
+    onCompleted(data) {
       dispatch({
         type: "LOGIN",
         payload: data.getUserByEmail,
       });
-    } catch (error) {
-      console.log(error.message);
+    },
+  });
+  useEffect(() => {
+    const handle = async () => {
+      try {
+        getUserByEmail({ variables: { email } });
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    if (email && !state.isLogged) {
+      handle();
     }
-  };
-  if (email && !state.isLogged) {
-    handle();
-  }
+  }, []);
 };
 
 export default useAutoLogin;

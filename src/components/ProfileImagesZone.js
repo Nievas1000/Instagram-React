@@ -3,7 +3,7 @@ import image from "../assets/perfil.jpg";
 
 const ProfileImagesZone = () => {
   return (
-    <Container className="container-imgs mt-1">
+    <Container className="container-imgs d-flex mt-1">
       <Row className="imgs-profile">
         <Col>
           <img src={image} alt="Profile" />
