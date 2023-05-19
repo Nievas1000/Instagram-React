@@ -2,7 +2,13 @@
   margin: 0px;
   padding: 0px;
 }
-
+a{
+  text-decoration: none !important;
+  color: inherit !important;
+}
+a:hover{
+  color: inherit !important;
+}
 body {
   background-color: rgb(233, 233, 233);
 }

@@ -1,48 +1,19 @@
-import { Col, Container } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import image from "../assets/perfil.jpg";
-import { HiDotsHorizontal } from "react-icons/hi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { FaRegComment } from "react-icons/fa";
-import { AiOutlineShareAlt } from "react-icons/ai";
-import { CiSaveDown2 } from "react-icons/ci";
+import { Post } from "../components/Post";
+import { Stories } from "../components/Stories";
 
 const Home = () => {
   const user = useSelector((state) => state.user);
+
   return (
-    <Col sm={10}>
-      <div className="d-flex justify-content-center">
-        <div className="container-post">
-          <div className="header-post d-flex align-items-center">
-            <Container className="d-flex">
-              <div className="img-header-post">
-                <img src={image} alt="img" />
-              </div>
-              <Container className="d-flex align-items-center">
-                <h5>{user.username}</h5>
-              </Container>
-              <div className="d-flex align-items-center">
-                <HiDotsHorizontal />
-              </div>
-            </Container>
-          </div>
-          <div className="container-img-post">
-            <img src={image} alt="img" />
-          </div>
-          <div className="d-flex accions-post">
-            <div className="d-flex">
-              <AiOutlineHeart />
-              <FaRegComment />
-              <AiOutlineShareAlt />
-            </div>
-            <div className="save-post">
-              <CiSaveDown2 />
-            </div>
-          </div>
-          <div className="info-post">
-            <h6>1000 Me gusta</h6>
-            <h6>{user.username}</h6>
-          </div>
+    <Col sm={10} className="d-flex justify-content-center col-home">
+      <div style={{ width: "100%" }}>
+        <div className="d-flex justify-content-center">
+          <Stories />
+        </div>
+        <div className="d-flex justify-content-center">
+          <Post user={user} />
         </div>
       </div>
     </Col>

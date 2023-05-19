@@ -11,6 +11,7 @@ import { BsPlusSquare } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import MoreMenu from "./MoreMenu";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showNames, setShowNames] = useState(true);
@@ -24,10 +25,12 @@ const Menu = () => {
       </div>
       <div className="d-flex justify-content-center">
         <ul className="container-list-menu">
-          <li className="container-item-menu">
-            <AiFillHome />
-            {showNames ? <div className="item-menu">Home</div> : null}
-          </li>
+          <NavLink to="/home">
+            <li className="container-item-menu">
+              <AiFillHome />
+              {showNames ? <div className="item-menu">Home</div> : null}
+            </li>
+          </NavLink>
           <li
             className="container-item-menu icon-mobile"
             onClick={() => setShowNames(!showNames)}

@@ -1,14 +1,19 @@
+.col-home{
+    width: 100% !important;
+}
+
 .container-post{
     width: 95%;
     height: 550px;
     position: absolute;
-    border: solid 1px black;
+    border: solid 1px rgb(104, 104, 104);
+    margin-top: 3%;
 }
 
 .header-post{
     height: 12%;
     width: 100%;
-    border: solid 1px black;
+    border: solid 1px rgb(104, 104, 104);
 }
 
 .header-post svg{
@@ -24,7 +29,7 @@
 .container-img-post{
     height: 68%;
     width: 100%;
-    border: solid 1px black;
+    border: solid 1px rgb(104, 104, 104);
 }
 
 .container-img-post img{
@@ -46,9 +51,106 @@
     margin: 10px;
 }
 
+.container-stories{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    border: solid 2px rgb(104, 104, 104);
+    border-radius: 8px;
+    width: 95%;
+    margin-top: 5%;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.container-stories::-webkit-scrollbar {
+    display: none;
+}
+
+.arrow-rigth-storie {
+    position: sticky;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 30px;
+    display: none;
+}
+
+.arrow-left-storie {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 30px;
+    display: none;
+}
+
+.arrow-left-storie svg{
+    margin-top: -50%;
+    margin-right: -50%;
+}
+
+.arrow-rigth-storie svg{
+    margin-top: -50%;
+    margin-left: -50%;
+}
+
+.storie{
+    margin: 10px;
+}
+
+.storie img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.storie span{
+    font-size: 12px;
+    margin-left: -20%;
+}
 @media only screen and (min-width:600px){
     .container-post{
-        width: 40%;
-        height: 600px;
+        width: 85%;
+    }
+}
+
+@media only screen and (min-width:800px){
+    .container-post{
+        width: 75%;
+    }
+    .container-stories{
+        width: 85%;
+    }
+    .arrow-rigth-storie{
+        display: flex;
+    }
+    .arrow-left-storie{
+        display: flex;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    .container-post{
+        width: 35%;
+    }
+    .col-home{
+        width: 83% !important;
+    }
+    .container-stories{
+        width: 55%;
+        height: 120px;
+    }
+    .storie img{
+        height: 70px;
+        width: 70px;
     }
 }
