@@ -78,6 +78,9 @@
     .menu{
         display: flex;
     }
+    .number-profile{
+        padding-left: 260px !important;
+    }
     .mob{
         display: none;
     }
@@ -89,9 +92,6 @@
         width: 200px;
         height: 200px;
         margin-left: 15%;
-    }
-    .number-profile{
-        width: 83.3% !important;
     }
     .container-amount-profile{
         justify-content: left;

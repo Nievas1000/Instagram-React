@@ -32,6 +32,13 @@ export const GET_USER_BY_EMAIL = gql`
       followed
       followers
       description
+      id
     }
+  }
+`;
+
+export const CREATE_POST = gql`
+  mutation createPost($file: Upload) {
+    createPost(file: $file)
   }
 `;

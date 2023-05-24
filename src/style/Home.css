@@ -4,8 +4,8 @@
 
 .container-post{
     width: 95%;
-    height: 550px;
-    position: absolute;
+    height: 700px;
+    position: relative;
     border: solid 1px rgb(104, 104, 104);
     margin-top: 3%;
 }
@@ -117,17 +117,10 @@
     font-size: 12px;
     margin-left: -20%;
 }
+
+
 @media only screen and (min-width:600px){
     .container-post{
-        width: 85%;
-    }
-}
-
-@media only screen and (min-width:800px){
-    .container-post{
-        width: 75%;
-    }
-    .container-stories{
         width: 85%;
     }
     .arrow-rigth-storie{
@@ -138,15 +131,21 @@
     }
 }
 
+@media only screen and (min-width:800px){
+    .container-post{
+        width: 55%;
+    }
+    .container-stories{
+        width: 65%;
+    }
+}
+
 @media only screen and (min-width:1000px){
     .container-post{
         width: 35%;
     }
-    .col-home{
-        width: 83% !important;
-    }
     .container-stories{
-        width: 55%;
+        width: 50%;
         height: 120px;
     }
     .storie img{

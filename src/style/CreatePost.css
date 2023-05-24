@@ -1,0 +1,63 @@
+.container-create-post{
+    background: rgba(18, 18, 18, 0.9);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+.modal-create-post{
+    width: 360px;
+    height: 380px;
+    background-color: rgb(180, 177, 177);
+    border-radius: 8px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-create-post{
+    height: 15%;
+    border-bottom: solid 1px black;
+    position: relative;
+}
+
+.body-create-post{
+    height: 85%;
+}
+
+.body-create-post button{
+    width: 70%;
+}
+body.modal-open {
+    overflow: hidden;
+}
+.continue-post{
+    position: absolute;
+    right: 0;
+}
+.back-post{
+    position: absolute;
+    left: 0;
+    font-size: 35px;
+}
+.back-post span{
+    margin-left: 20%;
+    cursor: pointer;
+}
+.continue-post span{
+    margin-left: -20%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev-img-create{
+    width: 100%;
+    height: 85%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+@media only screen and (min-width:1000px){
+    .modal-create-post{
+        width: 650px;
+        height: 650px;
+    }
+}

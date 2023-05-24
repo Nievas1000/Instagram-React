@@ -12,7 +12,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import MoreMenu from "./MoreMenu";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-const Menu = () => {
+
+const Menu = ({ setOpen }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showNames, setShowNames] = useState(true);
   return (
@@ -57,7 +58,7 @@ const Menu = () => {
             <AiOutlineHeart />
             {showNames ? <div className="item-menu">Notifications</div> : null}
           </li>
-          <li className="container-item-menu">
+          <li className="container-item-menu" onClick={() => setOpen(true)}>
             <BsPlusSquare />
             {showNames ? <div className="item-menu">Create</div> : null}
           </li>

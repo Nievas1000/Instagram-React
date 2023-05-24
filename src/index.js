@@ -6,6 +6,7 @@ import "./style/Profile.css";
 import "./style/Menu.css";
 import "./style/MoreMenu.css";
 import "./style/Home.css";
+import "./style/CreatePost.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ApolloClient,
@@ -21,6 +22,9 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri: "http://localhost:3001",
+    headers: {
+      "content-type": "application/json",
+    },
   }),
 });
 
