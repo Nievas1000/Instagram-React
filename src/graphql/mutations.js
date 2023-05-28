@@ -42,3 +42,14 @@ export const CREATE_POST = gql`
     createPost(file: $file)
   }
 `;
+
+export const GET_COMENTS_BY_POST = gql`
+  query getComents($id: Int) {
+    getComentsByPost(id: $id) {
+      id
+      id_post
+      coment
+      date
+    }
+  }
+`;

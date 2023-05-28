@@ -1,5 +1,6 @@
 .menu{
     position: fixed;
+    margin-left: -10px;
 }
 .container-menu{
     background-color: rgb(230, 237, 240);

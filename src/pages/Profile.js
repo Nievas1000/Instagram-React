@@ -11,6 +11,7 @@ import { Post } from "../components/profile/Post";
 
 const Profile = () => {
   const [images, setImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [isOpen, setOpen, divRefSon, divRefFather] = useDropdown();
@@ -38,7 +39,7 @@ const Profile = () => {
     return () => {
       document.body.classList.remove("modal-open");
     };
-  }, [user.id, isOpen, dispatch]);
+  }, []); // eslint-disable-line
   return (
     <Col className="d-flex justify-content-end col-home" sm={10}>
       <div style={{ width: "100%" }}>
@@ -51,9 +52,19 @@ const Profile = () => {
           <AmountsProfile />
         </div>
         <IconsProfile />
-        <ProfileImagesZone images={images} setOpen={setOpen} />
+        <ProfileImagesZone
+          images={images}
+          setOpen={setOpen}
+          setSelectedImage={setSelectedImage}
+        />
       </div>
-      {isOpen && <Post divRefSon={divRefSon} divRefFather={divRefFather} />}
+      {isOpen && (
+        <Post
+          divRefSon={divRefSon}
+          divRefFather={divRefFather}
+          selectedImage={selectedImage}
+        />
+      )}
     </Col>
   );
 };

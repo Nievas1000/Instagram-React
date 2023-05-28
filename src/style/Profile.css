@@ -79,9 +79,9 @@
 
 .container-own-post{
     background: rgba(18, 18, 18, 0.9);
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     overflow: hidden;
 }
