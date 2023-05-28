@@ -7,7 +7,7 @@ import ProfileImagesZone from "../components/profile/ProfileImagesZone";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import useDropdown from "../hooks/useDropdown";
-import { Post } from "../components/profile/Post";
+import { Post } from "../components/post/Post";
 
 const Profile = () => {
   const [images, setImages] = useState([]);
@@ -20,6 +20,7 @@ const Profile = () => {
     const getImages = async () => {
       try {
         const images = await axios.get(`http://localhost:3002/post/${user.id}`);
+        console.log(images);
         setImages(images.data);
         dispatch({
           type: "ADD_PUBLIS",
@@ -39,7 +40,7 @@ const Profile = () => {
     return () => {
       document.body.classList.remove("modal-open");
     };
-  }, []); // eslint-disable-line
+  }, [user.id]); // eslint-disable-line
   return (
     <Col className="d-flex justify-content-end col-home" sm={10}>
       <div style={{ width: "100%" }}>
@@ -60,6 +61,7 @@ const Profile = () => {
       </div>
       {isOpen && (
         <Post
+          user={user}
           divRefSon={divRefSon}
           divRefFather={divRefFather}
           selectedImage={selectedImage}

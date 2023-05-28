@@ -1,10 +1,12 @@
-import { IconsZone } from "../post/IconsZone";
-import { HeaderPost } from "../post/HeaderPost";
+import { IconsZone } from "./IconsZone";
+import { HeaderPost } from "./HeaderPost";
 import { useLazyQuery } from "@apollo/client";
 import { GET_COMENTS_BY_POST } from "../../graphql/mutations";
 import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
+import { getRandomUsernames } from "../../utils/getRandomUsernames";
 
-export const Post = ({ divRefSon, divRefFather, selectedImage }) => {
+export const Post = ({ user, divRefSon, divRefFather, selectedImage }) => {
   const [coments, setComents] = useState([]);
   const [getComents] = useLazyQuery(GET_COMENTS_BY_POST, {
     fetchPolicy: "network-only",
@@ -20,7 +22,6 @@ export const Post = ({ divRefSon, divRefFather, selectedImage }) => {
       console.log(error);
     }
   }, []); //eslint-disable-line
-  console.log(coments);
   return (
     <div className="container-own-post d-flex justify-content-center align-items-center">
       <div className="modal-own-post" ref={divRefSon}>
@@ -40,9 +41,38 @@ export const Post = ({ divRefSon, divRefFather, selectedImage }) => {
         <div className="header-own-post">
           <HeaderPost />
         </div>
-        <div className="own-post-coments">
+        <Container className="d-flex pt-3">
+          <div className="img-header-post">
+            <img
+              src={`http://localhost:3002/posts/${selectedImage.image}`}
+              alt="img"
+            />
+          </div>
+          <Container className="d-flex align-items-center">
+            <h5>{user.username}</h5>
+            <p className="d-flex mb-1 ms-2 decription-own-post">
+              {selectedImage.description}
+            </p>
+          </Container>
+        </Container>
+        <div className="own-post-coments mt-2">
           {coments.map((coment) => {
-            return <p>{coment.coment}</p>;
+            return (
+              <Container className="d-flex pt-3">
+                <div className="img-header-post">
+                  <img
+                    src={`http://i.pravatar.cc/150?u=${coment.id}`}
+                    alt="img"
+                  />
+                </div>
+                <Container className="d-flex align-items-center">
+                  <h5>{getRandomUsernames()}</h5>
+                  <p className="d-flex mb-1 ms-2 decription-own-post">
+                    {coment.coment}
+                  </p>
+                </Container>
+              </Container>
+            );
           })}
         </div>
         <div className="lowerzone">

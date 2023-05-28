@@ -1,10 +1,21 @@
 .container-moreMenu{
     position: absolute;
     background-color: rgb(217, 225, 228);
-    margin-top: -5%;
+    margin-top: -50%;
     border-radius: 10px;
     width: 250px;
     height: 286px;
+}
+.container-moreMenu ul{
+    list-style: none;
+}
+.container-moreMenu ul li{
+    display: flex;
+    margin-top: 15%;
+}
+.container-moreMenu ul li svg{
+    margin-top: 3%;
+    margin-left: 5%;
 }
 .closse-session{
     height: 50px;

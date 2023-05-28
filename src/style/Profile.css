@@ -108,6 +108,10 @@
     display: none;
 }
 
+.decription-own-post{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 @media only screen and (min-width:1000px){
     .menu{
         display: flex;
@@ -197,7 +201,7 @@
         height: 10%;
     }
     .own-post-coments{
-        height: 65%;
+        height: 60%;
     }
     .right-own-post .lowerzone{
         border-top: solid 1px black;
@@ -208,8 +212,9 @@
     }
     .own-post-input textarea{
         width: 100%;
-        height: 100%;
+        height: 80%;
         background-color: transparent;
         border: none;
+        resize: none;
     }
 }
