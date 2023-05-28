@@ -1,10 +1,10 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import image from "../assets/perfil.jpg";
+import image from "../../assets/perfil.jpg";
 import AmountsProfile from "./AmountsProfile";
 
-const HeaderProfile = ({ user }) => {
+const HeaderProfile = ({ user, images }) => {
   return (
-    <Container>
+    <Container className="container-header-profile">
       <Row className="mt-4">
         <Col>
           <img src={image} alt="Profile" className="img-profile" />
@@ -15,7 +15,7 @@ const HeaderProfile = ({ user }) => {
             Edit profile
           </Button>
           <div className="amount-profile desk">
-            <AmountsProfile />
+            <AmountsProfile images={images} />
           </div>
           <Container className="description desk">
             <span>{user.username}</span>

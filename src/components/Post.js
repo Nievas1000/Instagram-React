@@ -1,25 +1,14 @@
-import { Container } from "react-bootstrap";
-import { HiDotsHorizontal } from "react-icons/hi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaRegComment } from "react-icons/fa";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { CiSaveDown2 } from "react-icons/ci";
+import { HeaderPost } from "./post/HeaderPost";
 
 export const Post = ({ user }) => {
   return (
     <div className="container-post mt-4">
       <div className="header-post d-flex align-items-center">
-        <Container className="d-flex">
-          <div className="img-header-post">
-            <img src={user.image} alt="img" />
-          </div>
-          <Container className="d-flex align-items-center">
-            <h5>{user.userName}</h5>
-          </Container>
-          <div className="d-flex align-items-center">
-            <HiDotsHorizontal />
-          </div>
-        </Container>
+        <HeaderPost />
       </div>
       <div className="container-img-post">
         <img src={user.image} alt="img" />

@@ -62,10 +62,12 @@ const Menu = ({ setOpen }) => {
             <BsPlusSquare />
             {showNames ? <div className="item-menu">Create</div> : null}
           </li>
-          <li className="container-item-menu">
-            <AiOutlineUserDelete />
-            {showNames ? <div className="item-menu">Profile</div> : null}
-          </li>
+          <NavLink to="/profile">
+            <li className="container-item-menu">
+              <AiOutlineUserDelete />
+              {showNames ? <div className="item-menu">Profile</div> : null}
+            </li>
+          </NavLink>
           <div className="more-menu">
             <MoreMenu show={showMenu} />
           </div>

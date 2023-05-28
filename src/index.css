@@ -2,9 +2,6 @@
   margin: 0px;
   padding: 0px;
 }
-*, ::after, ::before{
-  box-sizing: inherit !important;
-}
 a{
   text-decoration: none !important;
   color: inherit !important;
@@ -14,6 +11,19 @@ a:hover{
 }
 body {
   background-color: rgb(233, 233, 233);
+}
+
+input:focus {
+  outline: none;
+  background-color: inherit !important;
+}
+textarea:focus{
+  outline: none;
+
+}
+
+.row>*{
+  padding-right: inherit !important;
 }
 .main{
   display: flex;

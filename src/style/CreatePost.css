@@ -55,9 +55,39 @@ body.modal-open {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+
+.container-create-description{
+    background-color: rgb(155, 154, 154);
+    width: 360px;
+    height: 200px;
+    border-radius: 4px;
+}
+.logo-create-description{
+    padding-top: 10px;
+}
+.container-input-post{
+    height: 50%;
+    padding-top: 10px;
+}
+.create-post-input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+}
 @media only screen and (min-width:1000px){
     .modal-create-post{
         width: 650px;
         height: 650px;
+    }
+    .container-modal-steps{
+        display: flex;
+    }
+    .container-create-description{
+        padding-top: 10px;
+    }
+    .container-create-description button{
+        margin-bottom: 5px;
     }
 }

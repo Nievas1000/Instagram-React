@@ -19,6 +19,14 @@ const reducer = (state = initialState, action) => {
         user: action.payload,
         isLogged: false,
       };
+    case "ADD_PUBLIS":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          publications: action.payload,
+        },
+      };
     default:
       return state;
   }

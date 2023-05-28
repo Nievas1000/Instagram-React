@@ -1,24 +1,59 @@
 import { Col, Container } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import AmountsProfile from "../components/AmountsProfile";
-import HeaderProfile from "../components/HeaderProfile";
-import IconsProfile from "../components/IconsProfile";
-import ProfileImagesZone from "../components/ProfileImagesZone";
+import { useDispatch, useSelector } from "react-redux";
+import AmountsProfile from "../components/profile/AmountsProfile";
+import HeaderProfile from "../components/profile/HeaderProfile";
+import IconsProfile from "../components/profile/IconsProfile";
+import ProfileImagesZone from "../components/profile/ProfileImagesZone";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import useDropdown from "../hooks/useDropdown";
+import { Post } from "../components/profile/Post";
 
 const Profile = () => {
+  const [images, setImages] = useState([]);
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const [isOpen, setOpen, divRefSon, divRefFather] = useDropdown();
+
+  useEffect(() => {
+    const getImages = async () => {
+      try {
+        const images = await axios.get(`http://localhost:3002/post/${user.id}`);
+        setImages(images.data);
+        dispatch({
+          type: "ADD_PUBLIS",
+          payload: images.data.length,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getImages();
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [user.id, isOpen, dispatch]);
   return (
-    <Col className="number-profile" sm={10}>
-      <HeaderProfile user={user} />
-      <Container className="mt-4 description mob">
-        <span>{user.username}</span>
-        <p>{user.description}</p>
-      </Container>
-      <div className="amount-profile mob">
-        <AmountsProfile />
+    <Col className="d-flex justify-content-end col-home" sm={10}>
+      <div style={{ width: "100%" }}>
+        <HeaderProfile user={user} images={images} />
+        <Container className="mt-4 description mob">
+          <span>{user.username}</span>
+          <p>{user.description}</p>
+        </Container>
+        <div className="amount-profile mob">
+          <AmountsProfile />
+        </div>
+        <IconsProfile />
+        <ProfileImagesZone images={images} setOpen={setOpen} />
       </div>
-      <IconsProfile />
-      <ProfileImagesZone />
+      {isOpen && <Post divRefSon={divRefSon} divRefFather={divRefFather} />}
     </Col>
   );
 };
