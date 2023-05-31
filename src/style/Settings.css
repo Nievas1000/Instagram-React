@@ -1,0 +1,92 @@
+.header-settings{
+    width: 100%;
+    border-bottom: solid 1px gray;
+    display: flex;
+}
+.back-settings{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 30px;
+}
+.back-settings svg{
+    margin-top: -40%;
+}
+.container-settings{
+    border: solid 1px gray;
+    border-radius: 4px;
+}
+.container-img-settings{
+    width: 100%;
+}
+.img-settings{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.info-change-photo h6{
+    margin-bottom: 0px;
+}
+.info-change-photo span{
+    font-weight: bold;
+    color: rgb(0, 119, 255);
+    font-size: 12px;
+}
+.username-settings input{
+    width: 90%;
+}
+.description-settings textarea{
+    width: 90%;
+}
+.save-settings{
+    width: 20%;
+}
+.container-update-image{
+    background: rgba(18, 18, 18, 0.9);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+}
+.modal-update-image{
+    width: 360px;
+    height: 300px;
+    background-color: rgb(180, 177, 177);
+    border-radius: 8px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.modal-update-image h3{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.modal-update-image h4{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: solid 1px gray;
+}
+.upload-image-profile{
+    color: rgb(0, 119, 255);
+}
+.delete-image-profile{
+    color: rgb(238, 81, 94);
+}
+@media only screen and (min-width:1000px){
+    .header-settings{
+        display: none !important;
+    }
+    .container-settings{
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    .modal-update-image{
+        width: 500px;
+    }
+}

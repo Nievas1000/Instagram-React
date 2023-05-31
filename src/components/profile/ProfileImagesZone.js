@@ -10,7 +10,11 @@ const ProfileImagesZone = ({ images, setOpen, setSelectedImage }) => {
       <Row className="imgs-profile">
         {images.map((image) => {
           return (
-            <Col key={image.id} onClick={() => handleImage(image)}>
+            <Col
+              className="pointer"
+              key={image.id}
+              onClick={() => handleImage(image)}
+            >
               <img
                 src={`http://localhost:3002/posts/${image.image}`}
                 alt="Profile"

@@ -1,7 +1,7 @@
 import { IconsZone } from "./IconsZone";
 import { HeaderPost } from "./HeaderPost";
 import { useLazyQuery } from "@apollo/client";
-import { GET_COMENTS_BY_POST } from "../../graphql/mutations";
+import { GET_COMENTS_BY_POST } from "../../graphql/queries";
 import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { getRandomUsernames } from "../../utils/getRandomUsernames";

@@ -21,10 +21,12 @@ const Layout = ({ children }) => {
   return (
     <div className="container-profile">
       <Row style={{ width: "100%", marginLeft: "0px" }}>
-        <Col sm={2} className="menu">
+        <Col sm={3} className="menu" style={{ width: "20%" }}>
           <Menu setOpen={setOpen} />
         </Col>
-        {children}
+        <Col sm={9} className="children">
+          {children}
+        </Col>
         {isOpen && (
           <div className="d-flex justify-content-center align-items-center container-create-post">
             <CreatePost divRefSon={divRefSon} setOpen={setOpen} />

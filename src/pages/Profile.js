@@ -20,7 +20,6 @@ const Profile = () => {
     const getImages = async () => {
       try {
         const images = await axios.get(`http://localhost:3002/post/${user.id}`);
-        console.log(images);
         setImages(images.data);
         dispatch({
           type: "ADD_PUBLIS",
@@ -42,7 +41,7 @@ const Profile = () => {
     };
   }, [user.id]); // eslint-disable-line
   return (
-    <Col className="d-flex justify-content-end col-home" sm={10}>
+    <Col className=" col-home" sm={10}>
       <div style={{ width: "100%" }}>
         <HeaderProfile user={user} images={images} />
         <Container className="mt-4 description mob">

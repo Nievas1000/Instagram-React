@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import Layout from "./components/Layout";
+import { Settings } from "./pages/Settings";
 
 const App = () => {
   useAutoLogin();
@@ -46,6 +47,16 @@ const App = () => {
             <ProtectedRoute>
               <Layout>
                 <Home />
+              </Layout>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Layout>
+                <Settings />
               </Layout>
             </ProtectedRoute>
           }

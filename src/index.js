@@ -7,6 +7,7 @@ import "./style/Menu.css";
 import "./style/MoreMenu.css";
 import "./style/Home.css";
 import "./style/CreatePost.css";
+import "./style/Settings.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   ApolloClient,

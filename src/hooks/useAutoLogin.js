@@ -1,6 +1,6 @@
 import { useLazyQuery } from "@apollo/client";
 import { useDispatch, useSelector } from "react-redux";
-import { GET_USER_BY_EMAIL } from "../graphql/mutations";
+import { GET_USER_BY_EMAIL } from "../graphql/queries";
 import { useEffect } from "react";
 
 const useAutoLogin = () => {

@@ -2,7 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { LOGIN_USER } from "../graphql/mutations";
+import { LOGIN_USER } from "../graphql/queries";
 import { useForm } from "./useForm";
 
 const useLogin = () => {

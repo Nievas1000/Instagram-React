@@ -133,7 +133,7 @@
 
 @media only screen and (min-width:800px){
     .container-post{
-        width: 55%;
+        width: 65%;
     }
     .container-stories{
         width: 65%;
@@ -142,10 +142,10 @@
 
 @media only screen and (min-width:1000px){
     .container-post{
-        width: 35%;
+        width: 50%;
     }
     .container-stories{
-        width: 50%;
+        width: 60%;
         height: 120px;
     }
     .storie img{
