@@ -41,7 +41,7 @@ const Profile = () => {
     };
   }, [user.id]); // eslint-disable-line
   return (
-    <Col className=" col-home" sm={10}>
+    <Col className="col-home d-flex" sm={10}>
       <div style={{ width: "100%" }}>
         <HeaderProfile user={user} images={images} />
         <Container className="mt-4 description mob">
